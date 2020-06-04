@@ -71,16 +71,3 @@
     {vals[i + 1]}
   </button>
 </div>
-
-<!-- 
-<div>i - {i}</div>
-
-<h3>checkedCombos</h3>
-{#each checkedCombos as combo}
-  <div>{combo.opt1} - {combo.opt2} - {combo.choice}</div>
-{/each}
-
-<h3>vals</h3>
-{#each vals as val}
-  <div>{val}</div>
-{/each} -->

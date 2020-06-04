@@ -6,7 +6,6 @@
   let step = 0;
   let values = [];
   const next = newValues => {
-    console.log(newValues);
     values = newValues;
     step++;
   };
