@@ -71,3 +71,13 @@
     {vals[i + 1]}
   </button>
 </div>
+
+<div class="combos">
+  {#each checkedCombos as combo}
+    <div class="combo">
+      <span class:active={combo.opt1 === combo.choice}>{combo.opt1}</span>
+      /
+      <span class:active={combo.opt2 === combo.choice}>{combo.opt2}</span>
+    </div>
+  {/each}
+</div>
