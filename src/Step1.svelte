@@ -73,7 +73,7 @@
     <button
       class="valuelist-button"
       class:active={selectedValues.includes(value)}
-      class:error={selectedValues.includes(value) && selectedValues.length > 10}
+      class:error={selectedValues.includes(value) && selectedValues.length > 12}
       on:click={() => selectValue(value)}>
       {value}
     </button>
