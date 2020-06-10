@@ -1,5 +1,5 @@
 {
-  "name": "what-are-my-values",
+  "name": "know-my-values",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",

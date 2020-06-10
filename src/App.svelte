@@ -12,8 +12,8 @@
 </script>
 
 <div class="header">
-  <h1>What are my values?</h1>
-  <p>Clarify what's really important to you. Choose and rank your values.</p>
+  <h1>Know my values?</h1>
+  <p>Clarify your core values with a simple rank sorting exercise.</p>
 </div>
 
 {#if step === 0}
