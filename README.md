@@ -1,4 +1,4 @@
-# Know my values?
+# Know my values
 
 Clarify your core values with a simple rank sorting exercise.
 

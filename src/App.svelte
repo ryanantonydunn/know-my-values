@@ -12,7 +12,7 @@
 </script>
 
 <div class="header">
-  <h1>Know my values?</h1>
+  <h1>Know my values</h1>
   <p>Clarify your core values with a simple rank sorting exercise.</p>
 </div>
 
