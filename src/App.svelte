@@ -1,25 +1,43 @@
 <script>
-  import Step1 from "./Step1.svelte";
-  import Step2 from "./Step2.svelte";
-  import Step3 from "./Step3.svelte";
+  import Header from "./components/Header.svelte";
+  import Footer from "./components/Footer.svelte";
+  import Step1 from "./screens/Step1.svelte";
+  import Step2 from "./screens/Step2.svelte";
+  import Step3 from "./screens/Step3.svelte";
 
   let step = 0;
   let values = [];
-  const next = newValues => {
+  const next = (newValues) => {
     values = newValues;
     step++;
   };
 </script>
 
-<div class="header">
-  <h1>Know my values</h1>
-  <p>Clarify your core values with a simple rank sorting exercise.</p>
-</div>
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: white;
+    color: #4a5568;
+    min-height: 100vh;
+  }
 
-{#if step === 0}
-  <Step1 {next} />
-{:else if step === 1}
-  <Step2 {next} {values} />
-{:else}
-  <Step3 {values} />
-{/if}
+  .content {
+    flex: 1;
+  }
+</style>
+
+<div class="container">
+  <Header />
+  <section class="content">
+    {#if step === 0}
+      <Step1 {next} />
+    {:else if step === 1}
+      <Step2 {next} {values} />
+    {:else}
+      <Step3 {values} />
+    {/if}
+  </section>
+  <Footer />
+</div>
