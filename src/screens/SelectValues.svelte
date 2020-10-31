@@ -1,7 +1,7 @@
 <script>
   import Button from "../components/Button.svelte";
-  export let next = () => {};
-  export let defaultValues;
+  export let setPage;
+  export let values;
 
   const MIN_ITEMS = 4;
   const MAX_ITEMS = 12;
@@ -58,7 +58,7 @@
 
 <h2><b>Step 1:</b> Choose up to {MAX_ITEMS} values to compare</h2>
 <div class="valuelist">
-  {#each defaultValues as value}
+  {#each values as value}
     <Button
       secondary
       active={selectedValues.includes(value)}
@@ -73,7 +73,7 @@
   <Button
     active
     disabled={hasNotEnoughValues || hasTooManyValues}
-    onClick={() => next(selectedValues)}
+    onClick={() => setPage('choose-preferences', selectedValues)}
     testId="proceed"
     title={btnMessage} />
 </div>

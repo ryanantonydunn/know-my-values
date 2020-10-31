@@ -1,11 +1,11 @@
 <script>
   import Header from "./components/Header.svelte";
   import Footer from "./components/Footer.svelte";
-  import Step1 from "./screens/Step1.svelte";
-  import Step2 from "./screens/Step2.svelte";
-  import Step3 from "./screens/Step3.svelte";
+  import SelectValues from "./screens/SelectValues.svelte";
+  import ChoosePreferences from "./screens/ChoosePreferences.svelte";
+  import ViewResults from "./screens/ViewResults.svelte";
 
-  const defaultValues = [
+  let values = [
     "Accuracy",
     "Achievement",
     "Adventure",
@@ -59,13 +59,11 @@
     "Tradition",
     "Wealth",
   ];
+  let page = "select-values";
 
-  let values = [];
-  let step = 0;
-
-  const next = (newValues) => {
+  const setPage = (newPage, newValues) => {
+    page = newPage;
     values = newValues;
-    step++;
   };
 </script>
 
@@ -87,12 +85,12 @@
 <div class="container">
   <Header />
   <section class="content">
-    {#if step === 0}
-      <Step1 {next} {defaultValues} />
-    {:else if step === 1}
-      <Step2 {next} {values} />
-    {:else}
-      <Step3 {values} />
+    {#if page === 'select-values'}
+      <SelectValues {setPage} {values} />
+    {:else if page === 'choose-preferences'}
+      <ChoosePreferences {setPage} {values} />
+    {:else if page === 'view-results'}
+      <ViewResults {values} />
     {/if}
   </section>
   <Footer />

@@ -1,6 +1,6 @@
 <script>
   import Button from "../components/Button.svelte";
-  export let next;
+  export let setPage;
   export let values;
 
   // duplicate values and randomise the order
@@ -50,7 +50,7 @@
         haveWeDoneThisAlready();
       } else {
         // finished
-        next(vals);
+        setPage("view-results", vals);
       }
     } else {
       haveWeDoneThisAlready();
