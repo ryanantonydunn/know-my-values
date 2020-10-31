@@ -1,60 +1,10 @@
 <script>
   import Button from "../components/Button.svelte";
-  export let next;
-  let values = [
-    "Accuracy",
-    "Achievement",
-    "Adventure",
-    "Authority",
-    "Autonomy",
-    "Caring",
-    "Challenge",
-    "Change",
-    "Comfort",
-    "Compassion",
-    "Contribution",
-    "Cooperation",
-    "Courtesy",
-    "Creativity",
-    "Dependability",
-    "Duty",
-    "Family",
-    "Forgiveness",
-    "Friendship",
-    "Fun",
-    "Generosity",
-    "Genuineness",
-    "Growth",
-    "Health",
-    "Helpfulness",
-    "Honesty",
-    "Humility",
-    "Humour",
-    "Justice",
-    "Knowledge",
-    "Leisure",
-    "Mastery",
-    "Moderation",
-    "Nonconformity",
-    "Openness",
-    "Order",
-    "Passion",
-    "Popularity",
-    "Power",
-    "Purpose",
-    "Rationality",
-    "Realism",
-    "Responsibility",
-    "Risk",
-    "Safety",
-    "Self-Knowledge",
-    "Service",
-    "Simplicity",
-    "Stability",
-    "Tolerance",
-    "Tradition",
-    "Wealth",
-  ];
+  export let next = () => {};
+  export let defaultValues;
+
+  const MIN_ITEMS = 4;
+  const MAX_ITEMS = 12;
 
   let selectedValues = [];
 
@@ -67,12 +17,12 @@
     }
   };
 
-  $: hasNotEnoughValues = selectedValues.length < 4;
-  $: hasTooManyValues = selectedValues.length > 12;
+  $: hasNotEnoughValues = selectedValues.length < MIN_ITEMS;
+  $: hasTooManyValues = selectedValues.length > MAX_ITEMS;
   $: btnMessage = hasNotEnoughValues
-    ? `Select at least ${4 - selectedValues.length} more`
+    ? `Select at least ${MIN_ITEMS - selectedValues.length} more`
     : hasTooManyValues
-    ? `Select at least ${selectedValues.length - 12} fewer`
+    ? `Select at least ${selectedValues.length - MAX_ITEMS} fewer`
     : "Proceed to sort your values";
 </script>
 
@@ -106,14 +56,15 @@
   }
 </style>
 
-<h2><b>Step 1:</b> Choose up to 12 values to compare</h2>
+<h2><b>Step 1:</b> Choose up to {MAX_ITEMS} values to compare</h2>
 <div class="valuelist">
-  {#each values as value}
+  {#each defaultValues as value}
     <Button
       secondary
       active={selectedValues.includes(value)}
       error={selectedValues.includes(value) && selectedValues.length > 12}
       onClick={() => selectValue(value)}
+      testId={value}
       title={value} />
   {/each}
 </div>
@@ -123,5 +74,6 @@
     active
     disabled={hasNotEnoughValues || hasTooManyValues}
     onClick={() => next(selectedValues)}
+    testId="proceed"
     title={btnMessage} />
 </div>

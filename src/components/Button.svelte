@@ -7,6 +7,7 @@
   export let fill = false;
   export let onClick = () => {};
   export let title = "";
+  export let testId = "";
 </script>
 
 <style>
@@ -141,6 +142,7 @@
   class:fill
   on:click={onClick}
   {disabled}
-  aria-label={title}>
+  aria-label={title}
+  data-testid={testId}>
   <div class="inner"><span class="text">{title}</span></div>
 </button>

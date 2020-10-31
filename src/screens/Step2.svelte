@@ -49,6 +49,7 @@
         hasChanged = false;
         haveWeDoneThisAlready();
       } else {
+        // finished
         next(vals);
       }
     } else {
@@ -130,7 +131,8 @@
       large
       secondary
       onClick={() => choose(false)}
-      title={vals[i]} />
+      title={vals[i]}
+      testId="choice1" />
   </div>
   <div>Or</div>
   <div class="choice">
@@ -139,7 +141,8 @@
       large
       secondary
       onClick={() => choose(true)}
-      title={vals[i + 1]} />
+      title={vals[i + 1]}
+      testId="choice2" />
   </div>
 </div>
 

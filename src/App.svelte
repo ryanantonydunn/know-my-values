@@ -5,8 +5,64 @@
   import Step2 from "./screens/Step2.svelte";
   import Step3 from "./screens/Step3.svelte";
 
-  let step = 0;
+  const defaultValues = [
+    "Accuracy",
+    "Achievement",
+    "Adventure",
+    "Authority",
+    "Autonomy",
+    "Caring",
+    "Challenge",
+    "Change",
+    "Comfort",
+    "Compassion",
+    "Contribution",
+    "Cooperation",
+    "Courtesy",
+    "Creativity",
+    "Dependability",
+    "Duty",
+    "Family",
+    "Forgiveness",
+    "Friendship",
+    "Fun",
+    "Generosity",
+    "Genuineness",
+    "Growth",
+    "Health",
+    "Helpfulness",
+    "Honesty",
+    "Humility",
+    "Humour",
+    "Justice",
+    "Knowledge",
+    "Leisure",
+    "Mastery",
+    "Moderation",
+    "Nonconformity",
+    "Openness",
+    "Order",
+    "Passion",
+    "Popularity",
+    "Power",
+    "Purpose",
+    "Rationality",
+    "Realism",
+    "Responsibility",
+    "Risk",
+    "Safety",
+    "Self-Knowledge",
+    "Service",
+    "Simplicity",
+    "Stability",
+    "Tolerance",
+    "Tradition",
+    "Wealth",
+  ];
+
   let values = [];
+  let step = 0;
+
   const next = (newValues) => {
     values = newValues;
     step++;
@@ -32,7 +88,7 @@
   <Header />
   <section class="content">
     {#if step === 0}
-      <Step1 {next} />
+      <Step1 {next} {defaultValues} />
     {:else if step === 1}
       <Step2 {next} {values} />
     {:else}

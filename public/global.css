@@ -25,55 +25,11 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
-p {
-  margin: 0;
-}
-
-.error {
-  border: 2px solid #d38d8d;
-}
-
 button {
   cursor: pointer;
   font-family: inherit;
 }
 
-/* .btn {
-  position: relative;
-  padding: 1rem 3rem;
-  border-radius: 999px;
-  background-image: linear-gradient(to right, #805ad5, #4299e1);
-  color: white;
-  font-size: 1rem;
-  border: none;
-  transition: transform 0.2s;
-
-  &:before {
-    border: 2px solid transparent;
-    transition: border-color 0.2s;
-  }
-
-  &:disabled {
-    background: #718096;
-    cursor: not-allowed;
-  }
+input {
+  font-family: inherit;
 }
-
-.btn:hover,
-.btn:focus {
-  transform: scale(1.05);
-  outline: none;
-}
-
-.btn:hover:before,
-.btn:focus:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 2px;
-  border-color: #fff;
-  border-radius: 999px;
-} */
